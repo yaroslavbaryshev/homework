@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 50px;
+}
+
+span {
+    display: block;
+    background-color: gray;
+    height: 3px;
+    width: 30px;
+    position: absolute;
+    top:20px;
+    left: 15px;
+    z-index: 1;
+    transition: 1.5s;
+}
+
+span::before {
+    content:'';
+    display: block;
+    background-color: gray;
+    height: 3px;
+    width: 30px;
+    bottom:9px;
+    position: absolute;
+    transition: 1.5s;  
+}
+
+span::after {
+    content:'';
+    display: block;
+    background-color: gray;
+    height: 3px;
+    width: 30px;
+    position: absolute;
+    top: 9px;
+    transition: 1.5s;
+} 
+
+.menu {
+    background-color:blueviolet;
+    color: whitesmoke;
+    width: 300px;
+    min-height: 300px;
+    left: -300px;
+    position:absolute;
+    top: 0px;
+    z-index: -1;
+    transition: all 1s;
+}
+
+.listpage {
+    margin-left: 15px;
+    line-height: 30px;
+    font-size: 20px;
+    font-family: sans-serif; 
+    cursor: pointer;
+}
+
+li:hover {
+    opacity: 0.8;
+}
+
+input[type="checkbox"]:checked ~ .menu {
+    left:0;
+}
+
+input {
+    height: 30px;
+    width: 30px;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    top:10px;
+    left: 15px;
+    cursor:pointer
+}
+
+input[type="checkbox"]:checked ~ span {
+    background-color: whitesmoke;
+    transition: all 1.5s;
+}
+
+input[type="checkbox"]:checked ~ span::before {
+    background-color: whitesmoke;
+    transition: all 1.5s;
+}
+
+input[type="checkbox"]:checked ~ span::after {
+    background-color: whitesmoke;
+    transition: all 1.5s;
+}
